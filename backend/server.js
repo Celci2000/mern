@@ -7,14 +7,7 @@ import mongoose from "mongoose";
 import  exerciseRouter from'./routes/exercise.js';
 import userRouter from './routes/users.js';
 const app= express()
-app.use(cors(
-    {
-        origin:[],
-        methods:["POST","GET"],
-        credentials:true
-        
-    }
-));
+app.use(cors());
 dotenv.config();
 const PORT = process.env.PORT || 5002;
 app.use(bodyParser.json({limit: "30mb", extended: true}));
