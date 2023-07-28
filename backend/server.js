@@ -7,7 +7,14 @@ import mongoose from "mongoose";
 import  exerciseRouter from'./routes/exercise.js';
 import userRouter from './routes/users.js';
 const app= express()
-app.use(cors());
+app.use(cors(
+    {
+        origin:[],
+        methods:["POST","GET"],
+        credentials:true
+        
+    }
+));
 dotenv.config();
 const PORT = process.env.PORT || 5002;
 app.use(bodyParser.json({limit: "30mb", extended: true}));
@@ -15,7 +22,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 
 
 
- app.use('/exercise', exerciseRouter);
+app.use('/exercise', exerciseRouter);
 app.use('/users',userRouter);
 // import authRoutes from './routes/auth.js';
 // import adminRoutes from './routes/admin/auth.js';
