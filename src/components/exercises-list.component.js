@@ -9,7 +9,7 @@ const Exercise =props =>{
         <td class="border py-2 px-4 captalize font-noraml font-mono">{props.exercise.description}</td>
        
         <td  class=" flex space-x-2"> 
-           <button class="px-4 py-2 bg-blue-500 text-white rounded-md"> <Link to ={"/edit/"+props.exercise._id}>edit</Link></button>
+           {/* <button class="px-4 py-2 bg-blue-500 text-white rounded-md"> <Link to ={"/edit/"+props.exercise._id}>edit</Link></button> */}
          <button  class="px-4 py-2 bg-red-500 text-white rounded-md"><a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}>delete</a></button>
         </td> 
     </tr>
